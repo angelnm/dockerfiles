@@ -9,7 +9,7 @@ RUN apt-get update \
     python3 \
     python3-pip \
     && pip3 install --upgrade pip
-RUN pip3 install tensorflow-gpu==1.15
+
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
     && locale-gen
 ENV LC_ALL en_US.UTF-8 
@@ -18,4 +18,5 @@ ENV LANGUAGE en_US:en
 
 RUN git clone https://github.com/lvapeab/nmt-keras /opt/nmt-keras
 WORKDIR /opt/nmt-keras
-RUN pip install -e .
+RUN pip install -e . \
+    && pip install tensorflow-gpu==1.15
