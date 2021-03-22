@@ -19,4 +19,6 @@ ENV LANGUAGE en_US:en
 RUN git clone https://github.com/lvapeab/nmt-keras /opt/nmt-keras
 WORKDIR /opt/nmt-keras
 RUN pip install -e . \
-    && pip install tensorflow-gpu==1.15
+    && pip install tensorflow-gpu==1.15 \
+    && git clone https://github.com/lvapeab/coco-caption.git
+ENV PYTHONPATH="/opt/nmt-keras/coco-caption:$PYTHONPATH"
