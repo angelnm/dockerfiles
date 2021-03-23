@@ -1,9 +1,11 @@
-Para crear la imagen de nmt-keras se debe utilizar el siguiente comando
+# Crear la Imagen
 
+Para crear la imagen de nmt-keras se debe utilizar el siguiente comando
 ```
 ./build.sh
 ```
----
+
+# Utilizar la Imagen
 La forma más básica para utilizar este Dockerfile es utilizar el comando
 
 ```
@@ -21,7 +23,8 @@ docker container run --rm --gpus all \
 ```
 Este comando substituye el archivo config.py de nmt-keras por el que le suministremos, crea el volumen de datasets y vincula también una carpeta para que podamos acceder a los modelos entrenados.
 
----
+# Entrenar Múltiples Modelos
+
 Un ejemplo de utilización para entrenar diferentes modelos de forma continuada crear la siguiente función en un fichero shell
 
 ```
