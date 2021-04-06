@@ -44,3 +44,5 @@ RUN pip3 install \
 RUN git clone https://github.com/angelnm/nmt-keras-click.git \
     && git clone https://github.com/angelnm/keras-click.git
 ENV PYTHONPATH="/opt/coco-caption:/opt/keras-click:$PYTHONPATH"
+
+WORKDIR /opt/nmt-keras-click
